@@ -7,8 +7,6 @@ import unittest
 import script as TEST
 
 class TestEmailSend(unittest.TestCase) :
-    def dep_setUp(self) : 
-        self.team_list_MLA = load_response("./test_input/team_list_MLA.html")
     def testshowMessage(self) :
         obj = TEST.CLIENTS.personalize(user='Bob',name="Bobby")
         log.info(obj)
