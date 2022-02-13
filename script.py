@@ -5,7 +5,7 @@ class CLIENTS :
     @staticmethod
     def load(**arg) :
         return [{"email" : "chriswithteal@gmail.com","name":"Puppy Paws", "user":"puppypaws"},
-                {"email" : "martielbeatty@martielbeatty.com","name":"Martiel and her Boobs", "user" : "FlamingoOne"}]
+                {"email" : "martiel@martielbeatty.com","name":"Martiel and her Boobs", "user" : "FlamingoOne"}]
     @staticmethod
     def addSubject(**ret) :
         ret['SUBJECT'] = "Women On Wheels Notification - Account Info {user}".format(**args)
