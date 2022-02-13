@@ -82,11 +82,8 @@ class EMAIL :
         ret.starttls()
         ret.login(user, pswd)
         return ret
-
-SenderAddress = "marketing.womenonwheels@gmail.com"
-password = "HotBikerBabes@2020"
-server = EMAIL.gmail(user=SenderAddress,pswd=password)
-client_list = CLIENTS.load()
-for client in client_list:
-    server.sendmail(SenderAddress, client["email"], CLIENT.personalize(**client))
-server.quit()
+    @staticmethod
+    def bulk(server, *client_list) :
+        for client in client_list:
+            server.sendmail(SenderAddress, client["email"], CLIENT.personalize(**client))
+        server.quit()
