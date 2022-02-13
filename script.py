@@ -7,11 +7,17 @@ class CLIENTS :
         return [{"email" : "chriswithteal@gmail.com","name":"Puppy Paws", "user":"puppypaws"},
                 {"email" : "martielbeatty@martielbeatty.com","name":"Martiel and her Boobs", "user" : "FlamingoOne"}]
     @staticmethod
-    def subject(**arg) :
-        return "Women On Wheels Notification - Account Info"
+    def addSubject(**ret) :
+        ret['SUBJECT'] = "Women On Wheels Notification - Account Info {user}".format(**args)
+        return ret
 
     @staticmethod
     def personalize(**arg) :
+        args = CLIENTS.addSubject()
+        args['TEXT'] = CLIENTS._personalize(**args)
+        return f'Subject: {SUBJECT}\n\n{TEXT}'.format(**args)
+    @staticmethod
+    def _personalize(**arg) :
         return """
 Hi {name},
 
