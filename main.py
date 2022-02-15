@@ -5,9 +5,9 @@ import libCommon as COMMON
 import libEmail as MAIN
 from libConstants import CUSTOM
 
-mgr= "marketing.womenonwheels@gmail.com"
-pswd = "HotBikerBabes@2020"
-subject = "Women On Wheels Notification - Account Info for {user_login}"
+mgr= "someone@gmail.com"
+pswd = "pswd123"
+subject = "Notification - Account Info for {user_login}"
 message = CUSTOM.body
 
 def prep() :
