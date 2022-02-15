@@ -8,10 +8,10 @@ import libCommon as COMMON
 from libConstants import CUSTOM
 import libEmail as TEST
 
-test_from = "marketing.womenonwheels@gmail.com"
-password = "HotBikerBabes@2020"
-client_list =  [{"user_email" : "chriswithteal@gmail.com","first_name":"Puppy","last_name":"Paws", "user_login":"puppypaws"},
-                {"user_email" : "martiel@martielbeatty.com","first_name":"Martiel", "last_name":"and Staff", "user_login" : "FlamingoOne"}]
+test_from = "someone@gmail.com"
+password = "pswd123"
+client_list =  [{"user_email" : "another01@gmail.com","first_name":"Puppy","last_name":"Paws", "user_login":"puppypaws"},
+                {"user_email" : "another2@gmail.com","first_name":"Martiel", "last_name":"and Staff", "user_login" : "FlamingoOne"}]
 test_subject="Hello user {user_login}"
 test_body=CUSTOM.body[:700]
 
