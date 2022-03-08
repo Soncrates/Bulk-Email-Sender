@@ -21,7 +21,7 @@ def main(*client_list) :
     sleep(5)
     
     count=20
-    for _from, _to, msg in MAIN.CLIENTS.transform(mgr,subject,message,*client_list):
+    for _from, _to, _subject, msg in MAIN.CLIENTS.transform(mgr,subject,message,*client_list):
         sleep(5)
         server.sendmail(_from, _to, msg)
         count=-1

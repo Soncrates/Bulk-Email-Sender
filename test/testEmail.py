@@ -34,8 +34,17 @@ class TestEmailSend(unittest.TestCase) :
             #scheck log file
     def testBulkSend(self) :
         server = TEST.EMAIL.gmail(user=test_from,pswd=password)
-        for _from, _to, msg in TEST.CLIENTS.transform(test_from,test_subject,test_body,*client_list):
+        for _from, _to, subject, msg in TEST.CLIENTS.transform(test_from,test_subject,test_body,*client_list):
             server.sendmail(_from, _to, msg)
+        server.quit()
+    def testBulkAttachment(self) :
+        server = TEST.EMAIL.gmail(user=CUSTOM._from,pswd=CUSTOM.pswd)
+        for _from, _to, subject, msg in TEST.CLIENTS.transform(CUSTOM._from,CUSTOM.subject,CUSTOM.body,*client_list):
+            obj = TEST.EMAIL.add_attachments(msg,*["testAttachment.csv"])
+            obj['From'] = _from
+            obj['To'] = _to
+            obj['Subject'] = subject
+            server.sendmail(_from, _to, obj.as_string())
         server.quit()
 
 if __name__ == '__main__' :
@@ -46,4 +55,3 @@ if __name__ == '__main__' :
    #COMMON.mkdir("../log")
    log.basicConfig(filename=log_file, format=COMMON.LOG_FORMAT_TEST, level=log.DEBUG)
    unittest.main()
-
